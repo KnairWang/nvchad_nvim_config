@@ -39,9 +39,9 @@ end
 
 vim.opt.relativenumber = true
 vim.opt.number = true
--- signcolumn = "yes"
-wrap = true
-numberwidth = 6
-mouse = ""
-showmod = true
-scrolloff = 10
+vim.opt.signcolumn = "yes"
+vim.opt.wrap = true
+vim.opt.numberwidth = 6
+vim.opt.mouse = ""
+vim.opt.showmode = true
+vim.opt.scrolloff = 10
