@@ -1,9 +1,8 @@
-**This repo is supposed to used as config by NvChad users!**
+- <https://github.com/NvChad/NvChad/tree/v2.5>
+- <https://github.com/NvChad/ui/tree/v2.5>
 
-- The main nvchad repo (NvChad/NvChad) is used as a plugin by this repo.
-- So you just import its modules , like `require "nvchad.options" , require "nvchad.mappings"`
-- So you can delete the .git from this repo ( when you clone it locally ) or fork it :)
+- <https://github.com/hrsh7th/nvim-cmp/blob/main/doc/cmp.txt>
 
-# Credits
+- <https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md>
 
-1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
+- <https://github.com/nvim-tree/nvim-tree.lua>
