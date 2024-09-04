@@ -22,23 +22,23 @@ end, { desc = "buffer goto prev" })
 map("n", "<leader>bn", "<cmd>enew<CR>", { desc = "buffer new" })
 
 map("n", "<leader>bx", function()
-    require("nvchad.tabufline").close_buffer()
+  require("nvchad.tabufline").close_buffer()
 end, { desc = "close current buffer" })
 
 map("n", "<leader>bc", function()
-    require("nvchad.tabufline").closeAllBufs(false)
+  require("nvchad.tabufline").closeAllBufs(false)
 end, { desc = "close other buffers" })
 
 map("n", "<leader>bl", function()
-    require("nvchad.tabufline").closeBufs_at_direction ("left")
+  require("nvchad.tabufline").closeBufs_at_direction ("left")
 end, { desc = "close buffers at left" })
 
 map("n", "<leader>br", function()
-    require("nvchad.tabufline").closeBufs_at_direction ("right")
+  require("nvchad.tabufline").closeBufs_at_direction ("right")
 end, { desc = "close buffers at right" })
 
 map("n", "<leader>bC", function()
-    require("nvchad.tabufline").closeAllBufs(true)
+  require("nvchad.tabufline").closeAllBufs(true)
 end, { desc = "close all buffers" })
 
 -- unset
