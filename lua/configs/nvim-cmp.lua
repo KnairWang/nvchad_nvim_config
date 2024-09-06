@@ -41,13 +41,13 @@ options.sorting = {
   priority_weight = 10,
   comparators = {
     cmp.config.compare.exact,
-    
+
     prioritize(types.lsp.CompletionItemKind.Snippet, false),
 
     prioritize(types.lsp.CompletionItemKind.Field, true),
     prioritize(types.lsp.CompletionItemKind.Property, true),
     prioritize(types.lsp.CompletionItemKind.Method, true),
-    
+
     prioritize(types.lsp.CompletionItemKind.Variable, true),
     prioritize(types.lsp.CompletionItemKind.Function, true),
     prioritize(types.lsp.CompletionItemKind.Class, true),
@@ -60,7 +60,7 @@ options.sorting = {
     -- cmp.config.compare.sort_text,
     -- cmp.config.compare.locality,
     -- cmp.config.compare.order,
-    
+
     -- cmp.config.compare.score,
     -- cmp.config.compare.length,
     -- cmp.config.compare.offset,
@@ -70,17 +70,29 @@ options.sorting = {
   },
 }
 
+options.formatting.fields = { "abbr", "kind" }
+options.formatting.expandable_indicator = true
 local format = options.formatting.format
 options.formatting.format = function(entry, vim_item)
-  local item = format(entry, vim_item)
-  
+  local vim_item = format(entry, vim_item)
+
   -- local maxwidth = type(opts.maxwidth) == "function" and opts.maxwidth() or opts.maxwidth
-  maxwidth = 30
+  local maxwidth = 30
   if vim.fn.strchars(vim_item.abbr) > maxwidth then
     vim_item.abbr = vim.fn.strcharpart(vim_item.abbr, 0, maxwidth) .. "…"
   end
 
-  return item
+  -- if vim.fn.strchars(vim_item.kind) > 12 then
+  --   vim_item.kind = vim.fn.strcharpart(vim_item.kind, 0, 12)
+  -- end
+
+
+  if vim.fn.strchars(vim_item.menu) > 0 then
+    -- vim_item.menu = vim.fn.strcharpart(vim_item.menu, 0, 0)
+    vim_item.menu = ""
+  end
+
+  return vim_item
 end
 
 return options
