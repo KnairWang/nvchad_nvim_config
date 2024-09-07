@@ -27,7 +27,7 @@ end
 local capabilities = make_capabilities()
 
 -- Servers with default config
-local servers = { 
+local servers = {
   "basedpyright",
   "csharp_ls",
   "cssls",
@@ -36,7 +36,7 @@ local servers = {
   "gleam",
   "pyright",
   "taplo",
-  "tsserver",
+  "ts_ls",
   "yamlls",
 }
 
