@@ -59,6 +59,14 @@ return {
       local conf = require "nvchad.configs.nvimtree"
 
       conf.view.width = 45
+      -- conf.filters.enable = false
+      conf.filters.git_ignored = false
+      conf.filters.dotfiles = false
+      conf.filters.git_clean = false
+      conf.filters.no_buffer = false
+      conf.filters.no_bookmark = false
+      conf.filters.custom = {}
+      conf.filters.exclude = {}
 
       return conf
     end
