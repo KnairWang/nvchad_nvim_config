@@ -34,6 +34,7 @@ local servers = {
   "elixirls",
   "html",
   "gleam",
+  "jsonls",
   "pyright",
   "taplo",
   "ts_ls",
