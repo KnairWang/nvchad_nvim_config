@@ -37,6 +37,9 @@ local function lexicographical(entry1, entry2)
   return nil
 end
 
+options.completion.completeopt = "menu,menuone,noselect"
+options.preselect = cmp.PreselectMode.None
+
 options.sorting = {
   priority_weight = 10,
   comparators = {
