@@ -93,4 +93,9 @@ return {
       return require("configs.nvim-cmp")
     end
   },
+
+  {
+    "windwp/nvim-autopairs",
+    enabled = false,
+  },
 }
