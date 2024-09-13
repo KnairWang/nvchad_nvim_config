@@ -80,7 +80,7 @@ options.formatting.format = function(entry, vim_item)
   local vim_item = format(entry, vim_item)
 
   -- local maxwidth = type(opts.maxwidth) == "function" and opts.maxwidth() or opts.maxwidth
-  local maxwidth = 30
+  local maxwidth = 20
   if vim.fn.strchars(vim_item.abbr) > maxwidth then
     vim_item.abbr = vim.fn.strcharpart(vim_item.abbr, 0, maxwidth) .. "…"
   end
@@ -89,9 +89,9 @@ options.formatting.format = function(entry, vim_item)
   --   vim_item.kind = vim.fn.strcharpart(vim_item.kind, 0, 12)
   -- end
 
-
-  if vim.fn.strchars(vim_item.menu) > 0 then
-    -- vim_item.menu = vim.fn.strcharpart(vim_item.menu, 0, 0)
+  local maxwidth = 40
+  if vim.fn.strchars(vim_item.menu) > maxwidth then
+    -- vim_item.menu = vim.fn.strcharpart(vim_item.menu, 0, maxwidth)
     vim_item.menu = ""
   end
 
