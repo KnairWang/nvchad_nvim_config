@@ -89,7 +89,7 @@ options.formatting.format = function(entry, vim_item)
   --   vim_item.kind = vim.fn.strcharpart(vim_item.kind, 0, 12)
   -- end
 
-  local maxwidth = 40
+  local maxwidth = 60
   if vim.fn.strchars(vim_item.menu) > maxwidth then
     vim_item.menu = vim.fn.strcharpart(vim_item.menu, 0, maxwidth)
     -- vim_item.menu = ""
