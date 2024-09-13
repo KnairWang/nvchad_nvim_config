@@ -5,6 +5,18 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 local nomap = vim.keymap.del
 
+-- unset
+nomap("n", "<tab>")
+nomap("n", "<S-tab>")
+nomap("n", "<leader>x")
+nomap("n", "<leader>b")
+nomap("n", "<C-n>")
+nomap("n", "<leader>h")
+nomap("n", "<leader>v")
+nomap("n", "<leader>n")
+nomap("n", "<leader>th")
+-- nomap("n", "<leader>D")
+
 -- map("n", ";", ":", { desc = "CMD enter command mode" })
 -- map("i", "jk", "<ESC>")
 
@@ -36,17 +48,15 @@ map("n", "<leader>bC", function()
   require("nvchad.tabufline").closeAllBufs(true)
 end, { desc = "close all buffers" })
 
--- nvimtree
-map("n", "<A-n>", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
-map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
+-- qf quick fix
+map("n", "<leader>cx", "<cmd>cclose<CR>", { desc = "close qf" })
 
--- unset
-nomap("n", "<tab>")
-nomap("n", "<S-tab>")
-nomap("n", "<leader>x")
-nomap("n", "<leader>b")
-nomap("n", "<C-n>")
-nomap("n", "<leader>h")
-nomap("n", "<leader>v")
-nomap("n", "<leader>n")
--- nomap("n", "<leader>D")
+-- diagnostics
+map("n", "<leader>df", vim.diagnostic.open_float, { desc = "Show diagnostics in a floating window" })
+
+-- nvimtree
+-- map("n", "<A-n>", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+-- map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
+
+-- netrw
+map("n", "<leader>e", "<cmd>Lexplore<CR>", { desc = "netrw toggle window" })

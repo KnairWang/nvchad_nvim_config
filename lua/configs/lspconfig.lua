@@ -2,6 +2,7 @@
 require("nvchad.configs.lspconfig").defaults()
 
 local map = vim.keymap.set
+local nomap = vim.keymap.del
 
 local lspconfig = require "lspconfig"
 local nvlsp = require "nvchad.configs.lspconfig"
@@ -13,7 +14,10 @@ local function on_attach(client, bufnr)
 
   nvlsp.on_attach(client, bufnr)
 
+  -- nomap("n", "gr")
+
   map("n", "gy", vim.lsp.buf.type_definition, opts "Go to type definition")
+  -- map("n", "gr", "<cmd>Trouble lsp_references open<cr>", opts "Show references")
 end
 
 local function on_init(client, bufnr)

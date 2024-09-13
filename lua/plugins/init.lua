@@ -98,4 +98,79 @@ return {
     "windwp/nvim-autopairs",
     enabled = false,
   },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    enabled = false,
+  },
+
+  {
+    "folke/trouble.nvim",
+    event = "VeryLazy",
+    cmd = "Trouble",
+    opts = {
+      auto_close = false,
+      win = {
+        type = "split",
+        position = "bottom",
+      },
+      focus = true,
+      warn_no_results = false,
+      modes = {
+        -- diagnostics = {
+        --   auto_open = true,
+        --   -- filter = {
+        --   --   range = 1,
+        --   -- },
+        --   follow = true
+        -- },
+        quickfix = {
+          auto_open = true,
+          focus = true,
+        },
+        qflist = {
+          auto_open = true,
+          focus = true,
+        },
+
+      },
+    },
+    keys = {
+      -- {
+      --   "<leader>xx",
+      --   "<cmd>Trouble diagnostics toggle<cr>",
+      --   desc = "Diagnostics (Trouble)",
+      -- },
+      {
+        "<leader>td",
+        "<cmd>Trouble diagnostics open filter.buf=0<cr>",
+        desc = "Buffer Diagnostics (Trouble)",
+      },
+      {
+        "<leader>ts",
+        "<cmd>Trouble symbols open focus=false<cr>",
+        desc = "Symbols (Trouble)",
+      },
+      -- {
+      --   "<leader>cl",
+      --   "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+      --   desc = "LSP Definitions / references / ... (Trouble)",
+      -- },
+      {
+        "<leader>tr",
+        "<cmd>Trouble lsp_references open<cr>",
+        desc = "Show references (Trouble)",
+      },
+      {
+        "<leader>tD",
+        "<cmd>Trouble lsp_declarations open<cr>",
+        desc = "Show declarations (Trouble)",
+      },
+      {
+        "<leader>td",
+        "<cmd>Trouble lsp_definitions open<cr>",
+        desc = "Show definitions (Trouble)",
+      },
+    },
+  }
 }
