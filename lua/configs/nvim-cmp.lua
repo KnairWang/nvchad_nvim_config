@@ -73,7 +73,7 @@ options.sorting = {
   },
 }
 
-options.formatting.fields = { "abbr", "kind" }
+options.formatting.fields = { "abbr", "kind", "menu" }
 options.formatting.expandable_indicator = true
 local format = options.formatting.format
 options.formatting.format = function(entry, vim_item)
@@ -91,8 +91,8 @@ options.formatting.format = function(entry, vim_item)
 
   local maxwidth = 40
   if vim.fn.strchars(vim_item.menu) > maxwidth then
-    -- vim_item.menu = vim.fn.strcharpart(vim_item.menu, 0, maxwidth)
-    vim_item.menu = ""
+    vim_item.menu = vim.fn.strcharpart(vim_item.menu, 0, maxwidth)
+    -- vim_item.menu = ""
   end
 
   return vim_item
