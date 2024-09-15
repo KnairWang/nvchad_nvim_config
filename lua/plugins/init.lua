@@ -100,12 +100,8 @@ return {
   },
 
   {
-    "nvim-tree/nvim-tree.lua",
-    enabled = false,
-  },
-
-  {
     "folke/trouble.nvim",
+    version = "*",
     event = "VeryLazy",
     cmd = "Trouble",
     opts = {
@@ -132,43 +128,52 @@ return {
           auto_open = true,
           focus = true,
         },
-
+        symbols = {
+          auto_open = true,
+          auto_close = true,
+          focus = false,
+          win = {
+            type = "split",
+            position = "right",
+            size = 30,
+          }
+        },
+        lsp_references = {
+          auto_open = false,
+          auto_close = true,
+          focus = true,
+          win = {
+            type = "split",
+            position = "bottom",
+            size = 10,
+          }
+        }
       },
     },
     keys = {
-      -- {
-      --   "<leader>xx",
-      --   "<cmd>Trouble diagnostics toggle<cr>",
-      --   desc = "Diagnostics (Trouble)",
-      -- },
       {
-        "<leader>td",
-        "<cmd>Trouble diagnostics open filter.buf=0<cr>",
-        desc = "Buffer Diagnostics (Trouble)",
+        "<leader>tdg",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        desc = "Diagnostics (Trouble)",
       },
       {
         "<leader>ts",
-        "<cmd>Trouble symbols open focus=false<cr>",
+        "<cmd>Trouble symbols toggle focus=false<cr>",
         desc = "Symbols (Trouble)",
       },
-      -- {
-      --   "<leader>cl",
-      --   "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-      --   desc = "LSP Definitions / references / ... (Trouble)",
-      -- },
       {
         "<leader>tr",
-        "<cmd>Trouble lsp_references open<cr>",
+        "<cmd>Trouble lsp_references toggle<cr>",
         desc = "Show references (Trouble)",
       },
       {
-        "<leader>tD",
-        "<cmd>Trouble lsp_declarations open<cr>",
+        "<leader>tdc",
+        "<cmd>Trouble lsp_declarations toggle<cr>",
         desc = "Show declarations (Trouble)",
       },
       {
-        "<leader>td",
-        "<cmd>Trouble lsp_definitions open<cr>",
+        "<leader>tdf",
+        "<cmd>Trouble lsp_definitions toggle<cr>",
         desc = "Show definitions (Trouble)",
       },
     },

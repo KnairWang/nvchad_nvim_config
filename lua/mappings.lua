@@ -56,7 +56,7 @@ map("n", "<leader>df", vim.diagnostic.open_float, { desc = "Show diagnostics in 
 
 -- nvimtree
 -- map("n", "<A-n>", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
--- map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
 
 -- netrw
-map("n", "<leader>e", "<cmd>Lexplore<CR>", { desc = "netrw toggle window" })
+-- map("n", "<leader>e", "<cmd>Lexplore<CR>", { desc = "netrw toggle window" })
