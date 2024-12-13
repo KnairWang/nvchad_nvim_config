@@ -33,11 +33,8 @@ local capabilities = make_capabilities()
 -- Servers with default config
 local servers = {
   "basedpyright",
-  "csharp_ls",
   "cssls",
-  "elixirls",
   "html",
-  "gleam",
   "jsonls",
   "pyright",
   "taplo",
