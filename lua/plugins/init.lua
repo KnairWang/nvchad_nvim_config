@@ -93,7 +93,34 @@ return {
 
   {
     "windwp/nvim-autopairs",
-    enabled = false,
+    enabled = true,
+    opts = {
+      fast_wrap = {},
+      disable_filetype = { "TelescopePrompt", "vim", "NvimTree", "Empty" },
+    },
+    config = function(_, opts)
+      local npairs = require 'nvim-autopairs'
+      npairs.setup(opts)
+
+      local Rule = require 'nvim-autopairs.rule'
+      local cond = require 'nvim-autopairs.conds'
+
+      local start_char = '<'
+      local end_char = '>'
+      npairs.add_rules({
+        Rule(start_char, end_char, "rust")
+            :with_pair(cond.before_text("::"), 2)
+            :with_pair(cond.not_after_regex("%w"), 1)
+            :with_move(function(op) return op.char == end_char end)
+            :with_del(cond.done()),
+
+        Rule(start_char, end_char, "rust")
+            :with_pair(cond.before_regex("%w"), 1)
+            :with_pair(cond.not_after_regex("%w"), 1)
+            :with_move(function(op) return op.char == end_char end)
+            :with_del(cond.done()),
+      })
+    end
   },
 
   {
